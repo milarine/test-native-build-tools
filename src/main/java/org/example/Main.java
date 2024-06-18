@@ -6,8 +6,8 @@ import org.graalvm.nativeimage.c.function.CEntryPoint;
 public class Main {
 
     @CEntryPoint
-    public static String main(IsolateThread isolateThread) {
-        return "Hello World";
+    public static int main(IsolateThread isolateThread) {
+        return 42;
     }
 
 }

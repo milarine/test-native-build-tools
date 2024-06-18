@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <graal-sdk.version>22.3.3</graal-sdk.version>
         <java.version>17</java.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -37,6 +38,7 @@
                     <imageName>libTestNativeBuildTools</imageName>
                     <buildArgs>
                         <arg>-Dbasepath=${project.basedir}</arg>
+<!--                        <buildArg>-H:+AllowDeprecatedBuilderClassesOnImageClasspath</buildArg>-->
                         <buildArg>-O3</buildArg>
                     </buildArgs>
                 </configuration>
@@ -44,5 +46,12 @@
         </plugins>
     </build>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.graalvm.sdk</groupId>
+            <artifactId>graal-sdk</artifactId>
+            <version>${graal-sdk.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
